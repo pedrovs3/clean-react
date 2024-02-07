@@ -10,7 +10,7 @@
     "test:ci": "npm test -- --coverage"
   },
   "keywords": [],
-  "author": "",
+  "author": "pedrovs3",
   "license": "ISC",
   "devDependencies": {
     "@faker-js/faker": "^8.4.0",
