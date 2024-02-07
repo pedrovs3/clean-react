@@ -2,7 +2,7 @@ import { RemoteAuthentication } from './remote-authentication'
 import { HttpPostClientSpy } from '../../test/http-client.mock'
 
 import { faker } from '@faker-js/faker'
-import { AuthenticationMock } from '../../../domain/test/authentication.mock'
+import { AuthenticationMock } from '@/domain/test/authentication.mock'
 
 const fakerUrl = faker.internet.url()
 
