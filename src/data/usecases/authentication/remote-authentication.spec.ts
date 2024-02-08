@@ -5,6 +5,7 @@ import { faker } from '@faker-js/faker'
 import { AuthenticationMock } from '@/domain/test/authentication.mock'
 import { HttpStatusCode } from '../../protocols/http'
 import { InvalidCredentialsError } from '../../../domain/errors/invalid-credentials.error'
+import { NetworkError, UnexpectedError } from '../../../domain/errors'
 
 const fakerUrl = faker.internet.url()
 
@@ -47,5 +48,25 @@ describe('RemoteAuthentication', () => {
 
     const promise = sut.auth(AuthenticationMock())
     await expect(promise).rejects.toThrow(new InvalidCredentialsError())
+  })
+
+  test('Should throw a UnexpectedError if HttpPostClient returns 400', async () => {
+    const { sut, httpPostClient } = makeSut()
+    httpPostClient.response = {
+      statusCode: HttpStatusCode.badRequest
+    }
+
+    const promise = sut.auth(AuthenticationMock())
+    await expect(promise).rejects.toThrow(new UnexpectedError())
+  })
+
+  test('Should throw a NetworkError if HttpPostClient returns 500', async () => {
+    const { sut, httpPostClient } = makeSut()
+    httpPostClient.response = {
+      statusCode: HttpStatusCode.serverError
+    }
+
+    const promise = sut.auth(AuthenticationMock())
+    await expect(promise).rejects.toThrow(new NetworkError())
   })
 })
