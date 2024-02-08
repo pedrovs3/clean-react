@@ -4,8 +4,7 @@ import { HttpPostClientSpy } from '../../test/http-client.mock'
 import { faker } from '@faker-js/faker'
 import { AuthenticationMock } from '@/domain/test/authentication.mock'
 import { HttpStatusCode } from '../../protocols/http'
-import { InvalidCredentialsError } from '../../../domain/errors/invalid-credentials.error'
-import { NetworkError, UnexpectedError } from '../../../domain/errors'
+import { InvalidCredentialsError, NetworkError, UnexpectedError } from '../../../domain/errors'
 
 const fakerUrl = faker.internet.url()
 
