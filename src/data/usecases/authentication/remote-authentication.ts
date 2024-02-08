@@ -1,6 +1,7 @@
 import { type HttpPostClient, type HttpResponse, HttpStatusCode } from '@/data/protocols/http'
 import { type AuthenticationParams } from '@/domain/usecases/authentication'
 import { InvalidCredentialsError } from '@/domain/errors/invalid-credentials.error'
+import { NetworkError, UnexpectedError } from '@/domain/errors'
 
 export class RemoteAuthentication {
   constructor (
@@ -13,6 +14,8 @@ export class RemoteAuthentication {
 
     switch (htttpResponse.statusCode) {
       case HttpStatusCode.unauthorized: throw new InvalidCredentialsError()
+      case HttpStatusCode.badRequest: throw new UnexpectedError()
+      case HttpStatusCode.serverError: throw new NetworkError()
       default: return htttpResponse
     }
   }
