@@ -1,4 +1,4 @@
-import { type HttpPostClient, type HttpPostParams, type HttpResponse, HttpStatusCode } from '../protocols/http'
+import { type HttpPostClient, type HttpPostParams, type HttpResponse, HttpStatusCode } from '../../protocols/http'
 
 export class HttpPostClientSpy<T, R> implements HttpPostClient<T, R> {
   url?: string

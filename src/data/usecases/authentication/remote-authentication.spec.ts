@@ -1,12 +1,12 @@
 import { RemoteAuthentication } from './remote-authentication'
-import { HttpPostClientSpy } from '../../test/http-client.mock'
+import { HttpPostClientSpy } from '../../test/'
 
 import { faker } from '@faker-js/faker'
-import { AuthenticationMock, mockAccountModel } from '@/domain/test/authentication.mock'
+import { AuthenticationMock, mockAccountModel } from '@/domain/test'
 import { HttpStatusCode } from '../../protocols/http'
-import { InvalidCredentialsError, NetworkError, UnexpectedError } from '../../../domain/errors'
-import { type AuthenticationParams } from '../../../domain/usecases/authentication'
-import { type AccountModel } from '../../../domain/models/account.model'
+import { InvalidCredentialsError, NetworkError, UnexpectedError } from '@/domain/errors'
+import { type AuthenticationParams } from '@/domain/usecases'
+import { type AccountModel } from '@/domain/models'
 
 const fakerUrl = faker.internet.url()
 
