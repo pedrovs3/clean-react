@@ -1,13 +1,9 @@
 import { HttpStatusCode } from "../../protocols/http";
 import { HttpPostClientSpy } from "../../test/";
 
-import { RemoteAuthentication } from "./remote-authentication";
+import { RemoteAuthentication } from "@/data/usecases";
 
-import {
-  InvalidCredentialsError,
-  NetworkError,
-  UnexpectedError,
-} from "@/domain/errors";
+import { InvalidCredentialsError, NetworkError, UnexpectedError } from "@/domain/errors";
 import { type AccountModel } from "@/domain/models";
 import { AuthenticationMock, mockAccountModel } from "@/domain/test";
 import { type AuthenticationParams } from "@/domain/usecases";
