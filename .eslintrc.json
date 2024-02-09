@@ -1,11 +1,20 @@
 {
-  "extends": ["standard-with-typescript"],
+  "extends": ["standard-with-typescript", "plugin:react/recommended"],
   "parserOptions": {
     "project": "./tsconfig.json"
   },
+  "plugins": ["react"],
   "rules": {
     "@typescript-eslint/consistent-type-definitions": "off",
     "@typescript-eslint/strict-boolean-expressions": "off",
-    "@typescript-eslint/unbound-method": "off"
+    "@typescript-eslint/unbound-method": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }
