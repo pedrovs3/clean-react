@@ -8,10 +8,10 @@ module.exports = {
     "plugin:prettier/recommended",
     "plugin:@liferay/react",
   ],
-  ignorePatterns: ["dist", ".eslintrc.cjs", "*/**/*.spec.ts", "*/**/*.mock.ts"],
   parser: "@typescript-eslint/parser",
   plugins: ["react-refresh", "@liferay", "simple-import-sort"],
   rules: {
+    "@liferay/no-anonymous-exports": ["off"],
     "react-refresh/only-export-components": [
       "warn",
       { allowConstantExport: true },

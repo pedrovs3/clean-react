@@ -1,0 +1,5 @@
+node_modules
+*.scss
+.eslintrc.cjs
+*/**/*.spec.ts
+*/**/*.mock.ts
