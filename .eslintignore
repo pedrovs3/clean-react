@@ -1,4 +1,5 @@
 node_modules
-.idea
-coverage
-*.config.js
+*.scss
+.eslintrc.cjs
+*/**/*.spec.ts
+*/**/*.mock.ts
