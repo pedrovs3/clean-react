@@ -9,7 +9,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   showPassword?: boolean;
 }
 
-export const Input: React.FC<InputProps> = ({ ...props }) => {
+export function Input({ ...props }: InputProps) {
   const [type, setType] = React.useState(props.type);
 
   const handleShowPassword = () => {
@@ -26,4 +26,4 @@ export const Input: React.FC<InputProps> = ({ ...props }) => {
       )}
     </S.InputWrapper>
   );
-};
+}
