@@ -2,10 +2,20 @@ import React from "react";
 
 import * as S from "./login.styles";
 
+import { Alert } from "@/main/presentation/components/Alert";
 import { Button } from "@/main/presentation/components/Button";
 import { Input } from "@/main/presentation/components/Input";
+import { Loader } from "@/main/presentation/components/loader";
+
+type StateProps = {
+  isLoading: boolean;
+};
 
 const Login: React.FC = () => {
+  const [isLoading] = React.useState<StateProps>({
+    isLoading: true,
+  });
+
   return (
     <>
       <S.Header>
@@ -24,6 +34,16 @@ const Login: React.FC = () => {
         <S.Link>Criar conta</S.Link>
       </S.Form>
       <S.Footer />
+      {isLoading && (
+        <Alert
+          style={{
+            flexDirection: "column",
+          }}
+        >
+          <Loader />
+          <p>Carregando...</p>
+        </Alert>
+      )}
     </>
   );
 };

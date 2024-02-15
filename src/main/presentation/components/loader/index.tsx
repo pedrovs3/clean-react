@@ -2,7 +2,7 @@ import "./loader.styles.scss";
 
 export const Loader = () => {
   return (
-    <div className="lds-ripple">
+    <div className="loader">
       <div></div>
       <div></div>
     </div>
