@@ -1,9 +1,5 @@
 import styled from "styled-components";
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
-import LogoSvg from "/assets/logo.svg";
-
 export const Header = styled.div`
   border-top: 40px solid ${({ theme }) => theme.colors.primaryDark};
   width: 100%;
@@ -32,7 +28,7 @@ export const Footer = styled.div`
 `;
 
 export const Logo = styled.img.attrs({
-  src: `${LogoSvg}`,
+  src: `/assets/logo.svg`,
 })`
   width: 50px;
   height: 30px;
