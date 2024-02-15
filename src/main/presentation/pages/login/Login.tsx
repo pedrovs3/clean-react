@@ -7,7 +7,7 @@ import { Input } from "@/main/presentation/components/Input";
 
 const Login: React.FC = () => {
   return (
-    <S.Container>
+    <>
       <S.Header>
         <S.Logo />
         <S.LogoTitle>4Dev - Enquete para programadores</S.LogoTitle>
@@ -24,7 +24,7 @@ const Login: React.FC = () => {
         <S.Link>Criar conta</S.Link>
       </S.Form>
       <S.Footer />
-    </S.Container>
+    </>
   );
 };
 
