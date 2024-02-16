@@ -1,3 +1,4 @@
+import { UseFormRegisterReturn } from "react-hook-form";
 import styled from "styled-components";
 
 export const InputWrapper = styled.div`
@@ -7,7 +8,9 @@ export const InputWrapper = styled.div`
   gap: 5px;
 `;
 
-export const Input = styled.input<{ error?: boolean }>`
+export const Input = styled.input<
+  { error?: boolean } & UseFormRegisterReturn<string>
+>`
   padding: 10px ${({ type }) => (type === "password" ? "40px" : "20px")} 10px
     20px;
   height: 20px;
@@ -28,11 +31,16 @@ export const Input = styled.input<{ error?: boolean }>`
   }
 `;
 
-export const ShowPasswordButton = styled.button`
+export const ShowPasswordButton = styled.button<{ error?: boolean }>`
   all: unset;
   position: absolute;
   right: 10px;
-  top: 23%;
+  top: ${(props) => (props.error ? "16%" : "23%")};
   cursor: pointer;
   color: ${({ theme }) => theme.text.colors.primary};
+`;
+
+export const Error = styled.span`
+  color: ${({ theme }) => theme.colors.error};
+  font-size: 0.8rem;
 `;
